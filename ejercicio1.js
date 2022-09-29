@@ -37,24 +37,19 @@ sudokuIncorrecto2[8] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 function compruebaSudokus(sudoku){
 let correcto = true;
 for (let index = 0; index < sudoku.length; index++) {
-    sudoku[index].sort();
-    console.log(sudoku[index]);
-}
-for (let index = 0; index < sudoku.length; index++) {
+    let arrayColumna=[]
     for (let subIndex = 0; subIndex < sudoku[index].length; subIndex++) {
-        if(!(sudoku[index].includes(subIndex+1))){
+        arrayColumna[subIndex]=sudoku[subIndex][index];
+    }
+    for (let subIndex = 0; subIndex < sudoku[index].length; subIndex++) {
+        if(!((sudoku[index].includes(subIndex+1))&&arrayColumna.includes(subIndex+1))){
             correcto=false;
         }
     }
-    for (let subIndex = 0; subIndex < sudoku[index].length; subIndex++) {
-        if((sudoku[subIndex][index]!=(index+1))){
-            correcto=false;
-            console.log(sudoku[subIndex][index]); 
-        }
-    }
+    
 
 }
     return correcto;
 }
 
-console.log(compruebaSudokus(sudokuIncorrecto2));
+console.log(compruebaSudokus(sudokuIncorrecto));
