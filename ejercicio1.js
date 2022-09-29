@@ -57,4 +57,4 @@ for (let index = 0; index < sudoku.length; index++) {
     return correcto;
 }
 
-console.log(compruebaSudokus(sudokuCorrecto));
+console.log(compruebaSudokus(sudokuIncorrecto2));
