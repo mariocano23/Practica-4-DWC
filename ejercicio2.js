@@ -2,11 +2,16 @@
 
 let minas=[];
 minas[0]=[-1, 0, 0, 0];
-minas[1]=[0, 0, 0, 0];
+minas[1]=[0, -1, 0, 0];
 minas[2]=[0, -1, 0, 0];
 minas[3]=[0, 0, 0, 0];
 
-function buscaMinas(arrayMinas) {
+function buscaMinas(array) {
+    let arrayMinas = [];
+    arrayMinas[0] = [...array[0]];
+    arrayMinas[1] = [...array[1]];
+    arrayMinas[2] = [...array[2]];
+    arrayMinas[3] = [...array[3]];
     for (let index = 0; index < arrayMinas.length; index++) {
         
         for (let subIndex = 0; subIndex < arrayMinas[index].length; subIndex++) { //Este for recorre el alrededor de cada posición con un "-1" y suma 1.
@@ -43,3 +48,4 @@ function buscaMinas(arrayMinas) {
 }
 
 console.log(buscaMinas(minas));
+console.log(minas);
