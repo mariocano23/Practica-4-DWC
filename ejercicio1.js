@@ -36,6 +36,7 @@ sudokuIncorrecto2[8] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 function compruebaSudokus(sudoku){
 let correcto = true;
+//Creación de arrays de las regiones del sudoku.
 let region1= [sudoku[0][0],sudoku[0][1],sudoku[0][2],sudoku[1][0],sudoku[1][1],sudoku[1][2],sudoku[2][0],sudoku[2][1],sudoku[2][2],];
 let region2= [sudoku[0][3],sudoku[0][4],sudoku[0][5],sudoku[1][3],sudoku[1][4],sudoku[1][5],sudoku[2][3],sudoku[2][4],sudoku[2][5],];
 let region3= [sudoku[0][6],sudoku[0][7],sudoku[0][8],sudoku[1][6],sudoku[1][7],sudoku[1][8],sudoku[2][6],sudoku[2][7],sudoku[2][8],];
@@ -45,7 +46,7 @@ let region6= [sudoku[3][6],sudoku[3][7],sudoku[3][8],sudoku[4][6],sudoku[4][7],s
 let region7= [sudoku[6][0],sudoku[6][1],sudoku[6][2],sudoku[7][0],sudoku[7][1],sudoku[7][2],sudoku[8][0],sudoku[8][1],sudoku[8][2],];
 let region8= [sudoku[6][3],sudoku[6][4],sudoku[6][5],sudoku[7][3],sudoku[7][4],sudoku[7][5],sudoku[8][3],sudoku[8][4],sudoku[8][5],];
 let region9= [sudoku[6][6],sudoku[6][7],sudoku[6][8],sudoku[7][6],sudoku[7][7],sudoku[7][8],sudoku[8][6],sudoku[8][7],sudoku[8][8],];
-for (let index = 0; index < sudoku.length; index++) { //comprobador de regiones.
+for (let index = 0; index < sudoku.length; index++) { //Comprobador de regiones.
     if(!((region1.includes(index+1))&&region2.includes(index+1)&&region3.includes(index+1)&&region4.includes(index+1)&&region5.includes(index+1)&&region6.includes(index+1)&&region7.includes(index+1)&&region8.includes(index+1)&&region9.includes(index+1))){
         correcto=false;
     }
@@ -53,7 +54,7 @@ for (let index = 0; index < sudoku.length; index++) { //comprobador de regiones.
 }
 for (let index = 0; index < sudoku.length; index++) {
     let arrayColumna=[]
-    for (let subIndex = 0; subIndex < sudoku[index].length; subIndex++) { //generador de Arrays para comprobar las columnas.
+    for (let subIndex = 0; subIndex < sudoku[index].length; subIndex++) { //Generador de arrays para comprobar las columnas.
         arrayColumna[subIndex]=sudoku[subIndex][index];
     }
     for (let subIndex = 0; subIndex < sudoku[index].length; subIndex++) {
